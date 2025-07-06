@@ -6,14 +6,19 @@
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm paket-card" 
            data-id="<?= $item['id'] ?>"
-           data-nama="<?= esc($item['nama_paket']) ?>"
-           data-harga="<?= $item['harga'] ?>"
+           data-nama="<?= esc($item['nama']) ?>"
            data-deskripsi="<?= esc($item['deskripsi']) ?>"
+           data-dari="<?= $item['dari'] ?>"
+           data-sampai="<?= $item['sampai'] ?>"
+           data-durasi="<?= esc($item['durasi']) ?>"
+           data-harga_reguler="<?= esc($item['harga_reguler']) ?>"
+           data-harga_vip="<?= esc($item['harga_vip']) ?>"
            style="cursor: pointer;">
         <div class="card-body">
-          <h5 class="card-title"><?= esc($item['nama_paket']) ?></h5>
+          <h5 class="card-title"><?= esc($item['nama']) ?></h5>
           <p class="card-text"><?= esc($item['deskripsi']) ?></p>
-          <p><strong>Rp <?= number_format($item['harga'], 0, ',', '.') ?></strong></p>
+          <p><strong>Rp <?= number_format($item['harga_reguler'], 0, ',', '.') ?></strong></p>
+          <p><strong>Rp <?= number_format($item['harga_vip'], 0, ',', '.') ?></strong></p>
         </div>
       </div>
     </div>
@@ -31,7 +36,8 @@
       <div class="modal-body">
         <p><strong>Nama:</strong> <span id="modalNama"></span></p>
         <p><strong>Deskripsi:</strong> <span id="modalDeskripsi"></span></p>
-        <p><strong>Harga:</strong> Rp <span id="modalHarga"></span></p>
+        <p><strong>Harga_reguler:</strong> Rp <span id="modalHarga_reguler"></span></p>
+        <p><strong>Harga_vip:</strong> Rp <span id="modalHarga_vip"></span></p>
       </div>
       <div class="modal-footer">
         <button type="button" id="btnPesanSekarang" class="btn btn-success">Pesan Sekarang</button>
@@ -52,7 +58,8 @@
       selectedPaketId = card.dataset.id;
       document.getElementById('modalNama').textContent = card.dataset.nama;
       document.getElementById('modalDeskripsi').textContent = card.dataset.deskripsi;
-      document.getElementById('modalHarga').textContent = parseInt(card.dataset.harga).toLocaleString('id-ID');
+      document.getElementById('modalHarga_reguler').textContent = parseInt(card.dataset.harga_reguler).toLocaleString('id-ID');
+      document.getElementById('modalHarga_vip').textContent = parseInt(card.dataset.harga_vip).toLocaleString('id-ID');
 
       const modal = new bootstrap.Modal(document.getElementById('paketModal'));
       modal.show();
