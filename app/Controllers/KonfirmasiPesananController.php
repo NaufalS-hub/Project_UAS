@@ -7,6 +7,16 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class KonfirmasiPesananController extends BaseController
 {
+    #--------------------------------------------------------------------
+    # RAJAONGKIR API
+    #--------------------------------------------------------------------
+    const COST_KEY = "I2IzkSScad4c3a6c0260c8e4vF3fDbBM";
+
+    #--------------------------------------------------------------------
+    # TOKO API 
+    #--------------------------------------------------------------------
+    const API_KEY = "random123678abcghi" ;
+
     public function konfirmasi_wa()
     {
       $data = [
@@ -22,9 +32,9 @@ class KonfirmasiPesananController extends BaseController
 
         // Simpan data ke session atau database jika perlu
         // session()->set('konfirmasi_pesanan', $data);
-
         // Redirect atau tampilkan pesan sukses
-        return redirect()->to('/notifikasi');
+        //return redirect()->to('/notifikasi');
+        //doSomething(self::COST_KEY, self::API_KEY); 
       return view('notifikasi');
     }
 }
