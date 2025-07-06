@@ -1,5 +1,4 @@
 <?= $this->extend('layout') ?>
 <?= $this->section('content') ?>
-“Ini halaman keranjang"
-
+“Ini halaman notifikasi ”
 <?= $this->endSection() ?>

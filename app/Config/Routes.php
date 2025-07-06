@@ -18,6 +18,7 @@ $routes->get('/keranjang', 'TransaksiController::index');
 $routes->post('/keranjang/tambah/(:num)', 'TransaksiController::tambah/$1');
 $routes->get('/keranjang/hapus/(:num)', 'TransaksiController::hapus/$1');
 $routes->post('/keranjang/hapus/(:num)', 'TransaksiController::hapus/$1');
+$routes->post('/notifikasi/kirim', 'KonfirmasiPesananController::konfirmasi_wa');
 
 $routes->get('/booking', 'BookingController::index'); // kalau kamu pakai booking
 $routes->get('/user', 'UserController::index'); // dashboard admin

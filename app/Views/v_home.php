@@ -1,6 +1,32 @@
  <?= $this->extend('layout') ?>
 <?= $this->section('content') ?>
- <!-- Table with stripped rows -->
+<form action="<?= base_url('notifikasi/kirim') ?>" method="post">
+  <div class="col-lg-6">
+      <!-- Vertical Form -->
+      <div>
+        <label for="nama" class="form-label">Nama</label>
+        <input type="text" class="form-control" name="nama" value="naufalo">
+      </div>
+      <div>
+        <label for="nomorhp" class="form-label">Nomor HP</label>
+        <input type="text" class="form-control" name="nomorhp" value="08123456789">
+      </div>
+      <div>
+        <label for="paket" class="form-label">Paket yang diambil</label>
+        <input type="text" class="form-control" name="paket" value="Paket A">
+      </div>
+      <div class="col-12">
+        <label for="harga" class="form-label">Harga</label>
+        <input type="text" class="form-control" name="harga" value="123">
+        </div>
+  </div>
+
+<div style="text-align: left">
+  <button type="submit" id="btnKonfirmasiPesanan" class="btn btn-primary">Konfirmasi pesanan</button>
+</div>
+</form>
+
+<!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
                   <tr>
