@@ -11,7 +11,7 @@ if(uri_string()!=""){
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
- <title>- 8Ball - <?php echo $hlm ?></title>
+  <title>- 8Ball - <?php echo $hlm ?></title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -47,6 +47,7 @@ if(uri_string()!=""){
 <body>
 
 <?= $this->include('components/header') ?>
+
 <?= $this->include('components/sidebar') ?>
 
   <main id="main" class="main">
@@ -54,16 +55,16 @@ if(uri_string()!=""){
     <div class="pagetitle">
       <h1>Data Tables</h1>
       <nav>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">Home</li>
-             <?php
+       <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+         <?php
 	        if($hlm!="Home"){
 	          ?>
 	          <li class="breadcrumb-item"><?php echo $hlm?></li> 
-	          <?php
-	        }
-                ?> 
-        </ol>
+    	  <?php
+        	}
+         ?> 
+</ol>
       </nav>
     </div><!-- End Page Title -->
 
@@ -73,8 +74,8 @@ if(uri_string()!=""){
 
           <div class="card">
             <div class="card-body">
-             <h5 class="card-title"><?php echo $hlm?></h5>
-             <?= $this->renderSection('content') ?>
+              <h5 class="card-title"><?php echo $hlm?></h5>
+                <?= $this->renderSection('content') ?>
             </div>
           </div>
 
@@ -84,7 +85,7 @@ if(uri_string()!=""){
 
   </main><!-- End #main -->
 
-<?= $this->include('components/footer') ?>
+  <?= $this->include('components/footer') ?>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -100,6 +101,7 @@ if(uri_string()!=""){
 
   <!-- Template Main JS File -->
   <script src="<?= base_url()?>NiceAdmin/assets/js/main.js"></script>
+<?= $this->renderSection('script') ?>
 
 </body>
 
